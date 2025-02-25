@@ -1,13 +1,20 @@
 <div>
-    <h3>Form 1</h3>
-    <label>name:
-        <input type="text" [(ngModel)]="formData.name" placeholder="Enter name">
-    </label>
-    <br>
-    <label>Email:
-        <input type="email" [(ngModel)]="formData.email" placeholder="Enter email">
-    </label>
-    <label>Password:
-        <input type="password" [(ngModel)]="formData.password" placeholder="Enter password">
-    </label>
+    <form [formGroup]="signupForm1">
+        <h3>Form 1</h3>
+        <h1>{{signupForm1.get('name')?.errors|json}}</h1>
+        <h1>{{signupForm1.get('email')?.errors|json}}</h1>
+        <h1>{{signupForm1.get('password')?.errors|json}}</h1>
+
+        <label>name:
+            <input formControlName="name" type="text" [(ngModel)]="formData.name" placeholder="Enter name">
+        </label>
+        <br>
+        <label>Email:
+            <input formControlName="email" type="email" [(ngModel)]="formData.email" placeholder="Enter email">
+        </label>
+        <label>Password:
+            <input formControlName="password" type="password" [(ngModel)]="formData.password"
+                placeholder="Enter password">
+        </label>
+    </form>
 </div>

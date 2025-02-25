@@ -1,7 +1,14 @@
-<label>name:
-    <input type="phoneNum" [(ngModel)]="formData.phoneNum" placeholder="Enter phoneNum">
-</label>
-<br>
-<label>Email:
-    <input type="nationalId" [(ngModel)]="formData.nationalId" placeholder="Enter nationalId">
-</label>
+<form [formGroup]="signupForm2">
+    <h3>Form 1</h3>
+    <h1>{{signupForm2.get('phoneNum')?.errors|json}}</h1>
+    <h1>{{signupForm2.get('nationalId')?.errors|json}}</h1>
+
+    <label>phone number:
+        <input formControlName="phoneNum" type="phoneNum" [(ngModel)]="formData.phoneNum" placeholder="Enter phoneNum">
+    </label>
+    <br>
+    <label>national id:
+        <input formControlName="nationalId" type="nationalId" [(ngModel)]="formData.nationalId"
+            placeholder="Enter nationalId">
+    </label>
+</form>

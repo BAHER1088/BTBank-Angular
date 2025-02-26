@@ -15,7 +15,7 @@ header {
 header .logo :first-child {
   height: 50px;
   top: 10px;
-  position: relative;
+  padding-right: 6px;
 }
 header .logo :last-child {
   height: 30px;
